@@ -1,0 +1,15 @@
+name: 'Upload ZIP File To Container Project'
+description: 'Upload a ZIP file to a Container Project URL'
+inputs:
+  file-path:
+    description: 'Path to the ZIP file'
+    required: true
+  upload-url:
+    description: 'The URL to upload the file'
+    required: true
+  auth-token:
+    description: 'Authentication token for the project upload'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
