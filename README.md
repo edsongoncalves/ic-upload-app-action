@@ -25,7 +25,7 @@ The response from the upload request.
 ## Example usage
 
 ```yaml
-uses: edsongoncalves/ic-upload-app-action@v0.1.1
+uses: edsongoncalves/ic-upload-app-action@v0.1.2
 with:
   zip-file-path: 'path/to/your/file.zip'
   project-url: 'https://project-url.com/api/projects/<ID>/deploy'
