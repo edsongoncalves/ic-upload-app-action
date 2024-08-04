@@ -10,7 +10,7 @@ async function run() {
     const key = core.getInput('key');
 
     const form = new FormData();
-    form.append('file', fs.createReadStream(filePath));
+    form.append('filename', fs.createReadStream(filePath));
 
     const response = await axios.post(projectUrl, form, {
       headers: {
