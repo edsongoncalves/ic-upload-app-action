@@ -1646,7 +1646,7 @@ async function run() {
     const response = await axios.post(uploadUrl, form, {
       headers: {
         ...form.getHeaders(),
-        'Authorization': `Bearer ${authToken}`
+        'X-Integrator-Container': `${authToken}`
       }
     });
 
