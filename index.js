@@ -5,17 +5,17 @@ const FormData = require('form-data');
 
 async function run() {
   try {
-    const filePath = core.getInput('file-path');
-    const uploadUrl = core.getInput('upload-url');
-    const authToken = core.getInput('auth-token');
+    const filePath = core.getInput('zip-file-path');
+    const projectUrl = core.getInput('project-url');
+    const key = core.getInput('key');
 
     const form = new FormData();
     form.append('file', fs.createReadStream(filePath));
 
-    const response = await axios.post(uploadUrl, form, {
+    const response = await axios.post(projectUrl, form, {
       headers: {
         ...form.getHeaders(),
-        'X-Integrator-Container': `${authToken}`
+        'X-Integrator-Container': `${key}`
       }
     });
 

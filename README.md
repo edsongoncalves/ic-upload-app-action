@@ -4,17 +4,17 @@ This action uploads a ZIP file to a Container Project URL.
 
 ## Inputs
 
-### `file-path`
+### `zip-file-path`
 
 **Required** The path to the ZIP file.
 
-### `upload-url`
+### `project-url`
 
-**Required** The URL to upload the file.
+**Required** The project URL to upload the file.
 
-### `auth-token`
+### `key`
 
-**Required** The authentication project token for the upload.
+**Required** The key authentication project token for the upload.
 
 ## Outputs
 
@@ -27,6 +27,6 @@ The response from the upload request.
 ```yaml
 uses: edsongoncalves/ic-upload-app-action@v0.1.1
 with:
-  file-path: 'path/to/your/file.zip'
-  upload-url: 'https://your-upload-url.com/upload'
-  auth-token: ${{ secrets.AUTH_TOKEN }}
+  zip-file-path: 'path/to/your/file.zip'
+  project-url: 'https://project-url.com/api/projects/<ID>/deploy'
+  key: ${{ secrets.AUTH_TOKEN }}
