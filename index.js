@@ -9,6 +9,10 @@ async function run() {
     const projectUrl = core.getInput('project-url');
     const key = core.getInput('key');
 
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`File not found at path: ${filePath}`);
+    }
+
     const form = new FormData();
     form.append('filename', fs.createReadStream(filePath));
 
